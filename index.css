@@ -14,12 +14,12 @@
 
   /* Font-sizes */
 
-  --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
-  --fs-600: 2rem;
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1rem;
   --fs-500: 1.75rem;
-  --fs-400: 1.125rem;
+  --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 }
@@ -152,7 +152,6 @@ select {
   text-align: center;
   place-items: center;
   padding-inline: 1rem;
-  border: 5px limegreen solid;
 }
 
 .grid-container * {
@@ -163,8 +162,8 @@ select {
   .grid-container {
     text-align: left;
     column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
-        2rem,
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
         1fr
       );
   }
@@ -322,11 +321,27 @@ select {
 }
 
 .primary-navigation {
-  --gap: 8rem;
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 35rem) {
+  .primary-navigation {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+    background: black;
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+  }
+  .primary-navigation.underline-indicators > .active {
+    border: 0;
+  }
 }
 
 .primary-navigation a {
@@ -413,4 +428,28 @@ select {
   border: 2px solid var(--clr-white);
 }
 
-/* Index page */
+/* ------------------------------ */
+/* Page specific background ------*/
+/* ---------------------------- */
+
+body {
+  background-size: cover;
+  background-position: bottom-center;
+}
+
+.home {
+  background-image: url('./assets/home/background-home-mobile.jpg');
+}
+
+@media (min-width: 35rem) {
+  .home {
+    background-position: center center;
+    background-image: url('./assets/home/background-home-tablet.jpg');
+  }
+}
+
+@media (min-width: 45rem) {
+  .home {
+    background-image: url('./assets/home/background-home-desktop.jpg');
+  }
+}
