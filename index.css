@@ -729,3 +729,29 @@ body {
 }
 
 /* Technology layout */
+
+.grid-container--tech {
+  grid-template-areas:
+    'title'
+    'image'
+    'tabs'
+    'content';
+}
+
+.numbered-title {
+  grid-area: title;
+}
+
+.grid-container--tech > img {
+  grid-area: image;
+  max-width: 80%;
+  border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+}
+
+.grid-container--tech > .dot-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--tech > .tech-details {
+  grid-area: content;
+}
