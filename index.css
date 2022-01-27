@@ -311,6 +311,25 @@ select {
   transform: scale(1.5);
 }
 
+.number-indicators button {
+  cursor: pointer;
+  font-size: var(--fs-500);
+  place-items: center;
+  border: solid 0.1em hsl(var(--clr-white) / 0.25);
+  padding: 0 1.5em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: hsl(var(--clr-white) / 0);
+}
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+  border: solid 0.1em hsl(var(--clr-white) / 0.5);
+}
+.number-indicators > [aria-selected='true'] {
+  background-color: hsl(var(--clr-white) / 1);
+  color: hsl(var(--clr-dark));
+}
+
 /* primary-header */
 
 .logo {
@@ -526,6 +545,23 @@ body {
   }
 }
 
+/* technology */
+.technology {
+  background-image: url(./assets/home/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+  .technology {
+    background-position: center center;
+    background-image: url(./assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (min-width: 45rem) {
+  .technology {
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
+  }
+}
 /* ----------------------------- */
 /* Layout                        */
 /* ----------------------------- */
@@ -691,3 +727,5 @@ body {
     max-width: 90%;
   }
 }
+
+/* Technology layout */
